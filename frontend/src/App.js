@@ -8,16 +8,26 @@ import Sidebar from './components/Sidebar';
 const drawerWidth = 250;
 
 function App() {
+  const[open, setOpen] = useState(true);
+
+  const handleDrawerButton= () => {
+    setOpen(!open);
+    console.log(open);
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
+
       {/**Side bar */}
       <Drawer
         variant="permanent"
+        open={open}
         sx={{
-          width: drawerWidth
+          width: open ? drawerWidth : 60,
+          transition: '0.3s'
         }}
       >
-        <Sidebar></Sidebar>
+        <Sidebar open={open} handleDrawerButton={handleDrawerButton} />
       </Drawer>
 
       {/**Main window with content */}
