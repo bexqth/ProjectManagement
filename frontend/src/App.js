@@ -16,7 +16,12 @@ function App() {
   }
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ 
+      display: 'flex', 
+      backgroundColor: '#f1f1f1',
+      minHeight: '100vh',
+      width: '100vw'
+    }}>
 
       {/**Side bar */}
       <Drawer
@@ -24,7 +29,19 @@ function App() {
         open={open}
         sx={{
           width: open ? drawerWidth : 60,
-          transition: '0.3s'
+          transition: '0.3s',
+          '& .MuiDrawer-paper': {
+            width: open ? drawerWidth : 60,
+            boxSizing: 'border-box',
+            transition: '0.3s',
+            borderRadius: '25px 25px 25px 25px', 
+            overflow: 'hidden',
+            left: 15,
+            top: 15,
+            height: 'calc(100% - 30px)',
+            border: 'none',
+            boxShadow: '0px 4px 20px rgba(0,0,0,0.08)',
+          },
         }}
       >
         <Sidebar open={open} handleDrawerButton={handleDrawerButton} />

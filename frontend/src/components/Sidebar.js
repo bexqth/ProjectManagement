@@ -24,13 +24,17 @@ const Sidebar = ({open, handleDrawerButton}) => {
             <Box sx={{ p: 2, display: 'flex', alignItems: 'center', justifyContent: open ? 'space-between' : 'center'}}>
                 
                 {open && (
-                    <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'primary.main', whiteSpace: 'nowrap' }}>
+                    <Typography variant="h6" sx={{fontWeight: 'bold', color: "#434343", whiteSpace: 'nowrap' }}>
                         Project Manager
                     </Typography>
                 )}
                 
                 <IconButton onClick={handleDrawerButton}>
-                    <MenuIcon />
+                    <MenuIcon 
+                        sx={{ 
+                            color: "#434343"
+                        }}
+                    />
                 </IconButton>
             </Box>
 
@@ -42,7 +46,11 @@ const Sidebar = ({open, handleDrawerButton}) => {
                 <ListItem disablePadding>
                     <ListItemButton sx={{ height: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }}>
                     <ListItemIcon sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }}>
-                        <DashboardIcon />
+                        <DashboardIcon 
+                            sx={{ 
+                                color: "#434343"
+                            }}
+                        />
                     </ListItemIcon>
                     <ListItemText 
                         primary="Dashboard" 
@@ -58,7 +66,11 @@ const Sidebar = ({open, handleDrawerButton}) => {
                 <ListItem disablePadding>
                     <ListItemButton sx={{ height: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }}>
                     <ListItemIcon sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }}>
-                        <ProjectIcon />
+                        <ProjectIcon 
+                            sx={{ 
+                                color: "#434343"
+                            }}                        
+                        />
                     </ListItemIcon>
                     <ListItemText 
                         primary="Projects" 
@@ -74,7 +86,11 @@ const Sidebar = ({open, handleDrawerButton}) => {
                 <ListItem disablePadding>
                     <ListItemButton sx={{ height: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }}>
                     <ListItemIcon sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }}>
-                        <AssignmentIcon />
+                        <AssignmentIcon 
+                            sx={{ 
+                                color: "#434343"
+                            }}                       
+                        />
                     </ListItemIcon>
                     <ListItemText 
                         primary="All tasks" 
