@@ -1,19 +1,21 @@
 import React from 'react';
 import { Card, CardContent, Typography, Box, LinearProgress, AvatarGroup, Avatar, Chip, IconButton } from '@mui/material';
 import ArrowIcon from '@mui/icons-material/ArrowForwardIos';
+import AssignmentIcon from '@mui/icons-material/Assignment';
 
 const ProjectCard = ({ color, title, category, progress, tasksNumber }) => {
     return(
         <Card sx={{
-            borderRadius: '24px', 
-            minHeight: '200px', 
+            borderRadius: '20px', 
+            minHeight: '200px',
             display: 'flex', 
             flexDirection: 'column',
             border: 'none',
             boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-            overflow: 'hidden'    
+            overflow: 'hidden', 
+            p: 0.8,
         }}>
-            <Box sx={{ backgroundColor: color, p: 3, display: 'flex', alignItems: 'flex-start', flexDirection: 'column'}}>
+            <Box sx={{ borderRadius: '18px', backgroundColor: color, p: 3, display: 'flex', alignItems: 'flex-start', flexDirection: 'column'}}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1, color: '#333' }}>
                     {title}
                 </Typography>
@@ -22,14 +24,21 @@ const ProjectCard = ({ color, title, category, progress, tasksNumber }) => {
                     {category}
                 </Typography>
 
-                <Typography sx={{ fontSize: 15, mb: 1, color: '#333' }}>        
-                    Tasks to do: {tasksNumber}
-                </Typography>
+                <Box sx={{ mt: 'auto', display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Chip 
+                        icon={<AssignmentIcon style={{ fontSize: '16px', color: '#1a1a1a' }} />}
+                        label={`${tasksNumber} tasks`} 
+                        sx={{ 
+                            bgcolor: 'rgba(255,255,255,0.5)', 
+                            fontWeight: 'bold',
+                            border: '1px solid rgba(255,255,255,0.3)'
+                        }} 
+                    />
+                </Box>
             </Box>
 
             <Box sx={{ 
-                    p: 2, 
-                    px: 3,
+                    padding: 1,
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'space-between',
