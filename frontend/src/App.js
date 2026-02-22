@@ -4,6 +4,7 @@ import './App.css';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Sidebar from './components/Sidebar';
+import ProjectsPage from './pages/ProjectsPage';
 
 const drawerWidth = 250;
 
@@ -51,12 +52,14 @@ function App() {
       <Box
         component="main" 
         sx={{
-          paddingLeft: 5,
-          minHeight: '100vh'
+          paddingLeft: 3,
+          minHeight: '100vh',
+          flexGrow: 1, //gets the rest
+          width: '100%',
+          transition: '0.3s',
         }}
       >
-        <h1>Dashboard</h1>
-        <p>Its content.</p>
+        <ProjectsPage />
       </Box>
 
     </Box>
