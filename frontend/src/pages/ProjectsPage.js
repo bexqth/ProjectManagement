@@ -1,15 +1,28 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, Button } from '@mui/material';
+import { 
+  Box, Typography, Grid, Button, 
+  Dialog, DialogTitle, DialogContent, DialogActions, TextField 
+} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import ProjectCard from '../components/ProjectCard';
+import { useState } from 'react';
+import AddProjectModal from '../components/modal_wins/AddProjectModal';
 
 const ProjectsPage = () => {
 
-    const projectsMockData = [
-        { id: 1, title: "Web Design", category: "Crafts engaging websites", color: "#e3f2fd", tasksNumber: 12},
-        { id: 2, title: "Graphic Design", category: "Creates impactful visuals", color: "#fff0e0", tasksNumber: 20 },
-        { id: 3, title: "Developers", category: "Builds functional solutions", color: "#f3e5f5", tasksNumber: 30 },
-    ];
+  const projectsMockData = [
+      { id: 1, title: "Web Design", category: "Crafts engaging websites", color: "#e3f2fd", tasksNumber: 12},
+      { id: 2, title: "Graphic Design", category: "Creates impactful visuals", color: "#fff0e0", tasksNumber: 20 },
+      { id: 3, title: "Developers", category: "Builds functional solutions", color: "#f3e5f5", tasksNumber: 30 },
+  ];
+
+  const[addButtonClicked, setAddButtonClicked] = useState(false);
+
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <Box sx={{ p: 4 }}>
@@ -20,6 +33,7 @@ const ProjectsPage = () => {
         </Typography>
 
         <Button
+          onClick={handleOpen}
           variant="contained" 
           startIcon={<AddIcon />}
           sx={{ marginLeft: 10, borderRadius: '12px', textTransform: 'none', paddingLeft: 2, bgcolor: '#3a3a3a' }}
@@ -42,6 +56,8 @@ const ProjectsPage = () => {
                 </Grid>
             )) }
       </Grid>
+      
+      <AddProjectModal open={open} onClose={handleClose} />
     </Box>
   );
 };
