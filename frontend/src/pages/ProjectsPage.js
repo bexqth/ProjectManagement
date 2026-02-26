@@ -11,9 +11,9 @@ import AddProjectModal from '../components/modal_wins/AddProjectModal';
 const ProjectsPage = () => {
 
   const projectsMockData = [
-      { id: 1, title: "Web Design", category: "Crafts engaging websites", color: "#e3f2fd", tasksNumber: 12},
-      { id: 2, title: "Graphic Design", category: "Creates impactful visuals", color: "#fff0e0", tasksNumber: 20 },
-      { id: 3, title: "Developers", category: "Builds functional solutions", color: "#f3e5f5", tasksNumber: 30 },
+      { id: 1, title: "Web Design", description: "Crafts engaging websites", color: "#e3f2fd", tasksNumber: 12},
+      { id: 2, title: "Graphic Design", description: "Creates impactful visuals", color: "#fff0e0", tasksNumber: 20 },
+      { id: 3, title: "Developers", description: "Builds functional solutions", color: "#f3e5f5", tasksNumber: 30 },
   ];
 
   const[addButtonClicked, setAddButtonClicked] = useState(false);
@@ -49,7 +49,7 @@ const ProjectsPage = () => {
                 <Grid item xs={12} sm={6} md={4} key={project.id}>
                     <ProjectCard 
                         title={project.title} 
-                        category={project.category} 
+                        description={project.description} 
                         color={project.color} 
                         tasksNumber={project.tasksNumber}
                     />

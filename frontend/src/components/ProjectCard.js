@@ -3,7 +3,7 @@ import { Card, CardContent, Typography, Box, LinearProgress, AvatarGroup, Avatar
 import ArrowIcon from '@mui/icons-material/ArrowForwardIos';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
-const ProjectCard = ({ color, title, category, progress, tasksNumber }) => {
+const ProjectCard = ({ color, title, description, progress, tasksNumber }) => {
     return(
         <Card sx={{
             borderRadius: '20px', 
@@ -21,7 +21,7 @@ const ProjectCard = ({ color, title, category, progress, tasksNumber }) => {
                 </Typography>
                     
                 <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1, color: '#333' }}>        
-                    {category}
+                    {description}
                 </Typography>
 
                 <Box sx={{ mt: 'auto', display: 'flex', alignItems: 'center', gap: 1 }}>
